@@ -1,0 +1,27 @@
+ALGORITHM checkpoint
+VAR
+    sentence : STRING;
+    nbr_char, nbr_words, nbr_vowels, i: INTEGER:=0;
+BEGIN
+    REPEAT
+    READ(sentence)
+    UNTIL (sentence === "" ||sentence === " ")
+
+    WHILE (sentence[i] <> ".") DO
+        nbr_char := nbr_char + 1;
+    IF (
+    sentence[i] === "a" || sentence[i] === "A" || sentence[i] === "e" || sentence[i] === "E" || sentence[i] === "y" || sentence[i] === "Y" || sentence[i] === "u" ||sentence[i] === "U" || sentence[i] === "i" ||sentence[i] === "I" ||sentence[i] === "o" ||sentence[i] === "O"
+    ) THEN
+    nbr_vowels:= nbr_vowels + 1;
+    ELSE_IF (sentence[i]=== " ") THEN
+    nbr_words := nbr_words +1 ;
+    END_IF
+    i:= i + 1;
+    END_WHILE
+    nbr_char := nbr_char + 1;
+    IF (sentence[i-1] <> " ") THEN
+    nbr_words:= nbr_words +1;
+    END_IF
+    WRITE("length is :", nbr_char, "vowels nbre is :", nbr_vowels, "words nbre is :", nbr_words);
+    
+END
